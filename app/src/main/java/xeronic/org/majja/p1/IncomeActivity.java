@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.Date;
@@ -23,6 +24,14 @@ public class IncomeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 new DatePickerFragment().show(getFragmentManager(), "Pick a date");
+            }
+        });
+
+        Button add_income_button = (Button) findViewById(R.id.add_income_button);
+        add_income_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ItemDialog().show(getFragmentManager(), "Item info");
             }
         });
     }
