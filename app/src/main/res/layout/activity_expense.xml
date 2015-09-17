@@ -1,25 +1,28 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="xeronic.org.majja.p1.IncomeActivity"
-    android:background="#dd6666">
+    android:background="#dd6666"
+    android:orientation="vertical">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:weightSum="1"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/title"
-            android:id="@+id/textView" />
+            android:id="@+id/textView"
+            android:textColor="#fff" />
 
         <EditText
             android:layout_width="match_parent"
@@ -31,7 +34,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/price"
-            android:id="@+id/textView2" />
+            android:id="@+id/textView2"
+            android:textColor="#fff" />
 
         <EditText
             android:layout_width="match_parent"
@@ -45,47 +49,68 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/date"
-            android:id="@+id/textView3" />
+            android:id="@+id/textView3"
+            android:textColor="#fff" />
 
-        <EditText
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:id="@+id/expense_date_input"
-            android:hint="ÅÅ-MM-DD" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/expense_date_input"
+                android:hint="ÅÅ-MM-DD" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_a_date"
+                android:id="@+id/expense_choose_date_button"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:background="#fff"
+                android:textColor="#dd6666" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/category"
-            android:id="@+id/textView4" />
+            android:id="@+id/textView4"
+            android:textColor="#fff" />
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="231dp"
-            android:id="@+id/expense_category_list"
-            android:layout_weight="0.21" />
-
-        <Button
+        <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:id="@+id/show_expense_activity_button"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="right" />
+            android:id="@+id/expense_spinner" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:id="@+id/show_expense_activity_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right"
+        android:textColor="#dd6666"
+        android:background="#fff"
+        android:outlineProvider="paddedBounds"
+        android:layout_weight="0" />
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:name="xeronic.org.majja.p1.BottomFragment"
         android:id="@+id/fragment2"
-        android:layout_gravity="center_horizontal"
         tools:layout="@layout/fragment_bottom"
-        android:layout_alignParentBottom="true" />
+        android:layout_weight="0" />
 
-</RelativeLayout>
+</LinearLayout>

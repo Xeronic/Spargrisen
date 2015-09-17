@@ -32,6 +32,10 @@
             android:name=".IncomeListActivity"
             android:label="@string/title_activity_income_list" >
         </activity>
+        <activity
+            android:name=".ExpenseListActivity"
+            android:label="@string/title_activity_expense_list" >
+        </activity>
     </application>
 
 </manifest>

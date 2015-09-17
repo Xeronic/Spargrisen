@@ -22,4 +22,5 @@
     <string name="income_added">Lade till inkomst</string>
     <string name="show_detailed_list">Visa detaljerad lista...</string>
     <string name="title_activity_income_list">IncomeListActivity</string>
+    <string name="title_activity_expense_list">ExpenseListActivity</string>
 </resources>
