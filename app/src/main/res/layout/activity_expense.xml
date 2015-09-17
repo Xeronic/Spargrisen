@@ -77,8 +77,6 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="right" />
 
-
-
     </LinearLayout>
 
     <fragment

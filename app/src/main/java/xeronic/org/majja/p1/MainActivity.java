@@ -15,8 +15,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button show_result_activity_button = (Button) findViewById(R.id.show_result_activity_button);
         Button add_income_button = (Button) findViewById(R.id.show_income_activity_button);
         Button add_expense_button = (Button) findViewById(R.id.show_expense_activity_button);
+
+        show_result_activity_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                startActivity(intent);
+            }
+        });
 
         add_income_button.setOnClickListener(new View.OnClickListener() {
             @Override

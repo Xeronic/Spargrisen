@@ -1,34 +1,34 @@
 package xeronic.org.majja.p1;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class ResultActivity extends Activity {
+public class IncomeListActivity extends Activity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_income_list);
 
-        TextView income_details = (TextView) findViewById(R.id.income_detail_button);
-        income_details.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ResultActivity.this, IncomeListActivity.class);
-                startActivity(intent);
-            }
-        });
+        ListView incomes_list = (ListView) findViewById(R.id.incomes_list);
+        Transaction[] transactions = new DBHandler(this).getAllTransactions();
+
+        ArrayAdapter<Transaction> transactions_adapter = new ArrayAdapter<Transaction>(this, android.R.layout.simple_list_item_1, transactions);
+        incomes_list.setAdapter(transactions_adapter);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_result, menu);
+        getMenuInflater().inflate(R.menu.menu_income_list, menu);
         return true;
     }
 

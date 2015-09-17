@@ -19,5 +19,7 @@
     <string name="category">Kategori</string>
     <string name="add">+ Lägg till</string>
     <string name="amount">Belopp</string>
+    <string name="income_added">Lade till inkomst</string>
     <string name="show_detailed_list">Visa detaljerad lista...</string>
+    <string name="title_activity_income_list">IncomeListActivity</string>
 </resources>

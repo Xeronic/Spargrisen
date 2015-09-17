@@ -47,13 +47,28 @@
             android:text="@string/date"
             android:id="@+id/textView3" />
 
-        <EditText
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:id="@+id/income_date_input"
-            android:hint="ÅÅ-MM-DD" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/income_date_input"
+                android:hint="ÅÅ-MM-DD"
+                android:layout_weight="3" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Välj datum..."
+                android:id="@+id/income_choose_date_button"
+                android:layout_weight="1" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,11 +77,10 @@
             android:text="@string/category"
             android:id="@+id/textView4" />
 
-        <ListView
+        <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="231dp"
-            android:id="@+id/income_category_list"
-            android:layout_weight="0.21" />
+            android:layout_height="wrap_content"
+            android:id="@+id/income_spinner" />
 
         <Button
             android:layout_width="wrap_content"

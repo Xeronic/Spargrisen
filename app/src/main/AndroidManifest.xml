@@ -28,6 +28,10 @@
             android:name=".ExpenseActivity"
             android:label="@string/title_activity_outcome" >
         </activity>
+        <activity
+            android:name=".IncomeListActivity"
+            android:label="@string/title_activity_income_list" >
+        </activity>
     </application>
 
 </manifest>
