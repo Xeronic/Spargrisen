@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class ExpenseListActivity extends Activity {
 
@@ -11,6 +12,13 @@ public class ExpenseListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expense_list);
+
+        ListView expenses_list = (ListView) findViewById(R.id.expenses_list);
+        Transaction[] transactions = new DBHandler(this).getAllExpenses();
+
+        ExpensesArrayAdapter adapter = new ExpensesArrayAdapter(this, transactions);
+        expenses_list.setAdapter(adapter);
+
     }
 
     @Override

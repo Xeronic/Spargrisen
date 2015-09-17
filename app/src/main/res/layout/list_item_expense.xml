@@ -16,21 +16,17 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/list_item_income_title"
+            android:id="@+id/list_item_expense_text"
             android:layout_marginLeft="20sp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:textColor="#fff" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Lön"
-            android:id="@+id/list_item_income_category"
-            android:layout_gravity="center_vertical|right"
-            android:layout_marginRight="20sp"
-            android:textColor="#fff" />
+        <ImageView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:id="@+id/list_item_expense_image"
+            android:layout_gravity="center_vertical" />
 
     </LinearLayout>
 

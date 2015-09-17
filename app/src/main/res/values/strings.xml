@@ -23,4 +23,8 @@
     <string name="show_detailed_list">Visa detaljerad lista...</string>
     <string name="title_activity_income_list">IncomeListActivity</string>
     <string name="title_activity_expense_list">ExpenseListActivity</string>
+    <string name="expense_added">Lade till utgift</string>
+    <string name="choose_a_date">Välj datum...</string>
+    <string name="total_income_text">Din totala inkomst är</string>
+    <string name="total_expense_text">Dina totala utgifter är</string>
 </resources>

@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import java.sql.Date;
 
-public class IncomeActivity extends Activity {
+public class IncomeActivity extends Activity implements DateInterface {
 
     private final String categories[] = { "Lön", "Övrigt" };
 

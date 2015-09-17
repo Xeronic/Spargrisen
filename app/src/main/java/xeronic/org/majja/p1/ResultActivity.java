@@ -15,11 +15,40 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        TextView total_income_text = (TextView) findViewById(R.id.total_income_text);
+        TextView total_expense_text = (TextView) findViewById(R.id.total_expense_text);
+
+        DBHandler db_handler = new DBHandler(this);
+        Transaction[] total_income_transactions = db_handler.getAllIncomes();
+        Transaction[] total_expense_transactions = db_handler.getAllExpenses();
+
+        int total_income = 0, total_expense = 0;
+
+        for (Transaction t : total_income_transactions) {
+            total_income += t.getAmount();
+        }
+
+        for (Transaction t : total_expense_transactions) {
+            total_expense += t.getAmount();
+        }
+
+        total_income_text.setText(getString(R.string.total_income_text) + " " + total_income);
+        total_expense_text.setText(getString(R.string.total_expense_text) + " " + total_expense);
+
         TextView income_details = (TextView) findViewById(R.id.income_detail_button);
         income_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, IncomeListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView expense_details = (TextView) findViewById(R.id.expense_detail_button);
+        expense_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResultActivity.this, ExpenseListActivity.class);
                 startActivity(intent);
             }
         });

@@ -10,17 +10,15 @@ import android.widget.Toast;
 
 public class IncomeListActivity extends Activity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_income_list);
 
         ListView incomes_list = (ListView) findViewById(R.id.incomes_list);
-        Transaction[] transactions = new DBHandler(this).getAllTransactions();
+        Transaction[] transactions = new DBHandler(this).getAllIncomes();
 
-        ArrayAdapter<Transaction> transactions_adapter = new ArrayAdapter<Transaction>(this, android.R.layout.simple_list_item_1, transactions);
+        TransactionArrayAdapter transactions_adapter = new TransactionArrayAdapter(this, transactions);
         incomes_list.setAdapter(transactions_adapter);
 
     }
