@@ -1,10 +1,17 @@
 package xeronic.org.majja.p1;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ExpenseListActivity extends Activity {
 
@@ -14,10 +21,31 @@ public class ExpenseListActivity extends Activity {
         setContentView(R.layout.activity_expense_list);
 
         ListView expenses_list = (ListView) findViewById(R.id.expenses_list);
-        Transaction[] transactions = new DBHandler(this).getAllExpenses();
+        final Transaction[] transactions = new DBHandler(this).getAllExpenses();
 
         ExpensesArrayAdapter adapter = new ExpensesArrayAdapter(this, transactions);
         expenses_list.setAdapter(adapter);
+        expenses_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog alertDialog = new AlertDialog.Builder(ExpenseListActivity.this).create();
+                alertDialog.setTitle(transactions[position].getTitle());
+
+                String message = "Belopp: " + transactions[position].getAmount() +
+                                 "\nDatum: " + transactions[position].getDate() +
+                                 "\nKategori: " + transactions[position].getCategory();
+
+                alertDialog.setMessage(message);
+
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
 
     }
 

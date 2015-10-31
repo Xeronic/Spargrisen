@@ -1,19 +1,20 @@
 package xeronic.org.majja.p1;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Xeronic on 15-09-14.
  */
-public class Transaction {
+public class Transaction implements Serializable {
 
     private int _id;
     private String title;
     private int amount;
-    private Date date;
+    private String date;
 
     private String category;
-    public Transaction(String title, int amount, Date date, String category) {
+    public Transaction(String title, int amount, String date, String category) {
         this.title = title;
         this.amount = amount;
         this.date = date;
@@ -39,7 +40,7 @@ public class Transaction {
         return title;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -55,11 +56,12 @@ public class Transaction {
         this.title = title;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
     public String toString() {
+        if (amount < 0) amount *= -1;
         return title + ": " + amount;
     }
 }

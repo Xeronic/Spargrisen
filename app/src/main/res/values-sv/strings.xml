@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Spargrisen</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="application_name">Spargrisen</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">Huvudmenyn</string>
+    <string name="title_activity_result">Översikt</string>
+    <string name="title_activity_income">Lägg till inkomst</string>
+    <string name="title_activity_expense">Lägg till utgift</string>
+    <string name="title_activity_outcome">Lägg till utgift</string>
+    <string name="economic_overview">Ekonomisk översikt</string>
+    <string name="add_expense">Lägg till utgift</string>
+    <string name="add_income">Lägg till inkomst</string>
+    <string name="title">Titel</string>
+    <string name="price">Kostnad</string>
+    <string name="date">Datum</string>
+    <string name="category">Kategori</string>
+    <string name="add">+ Lägg till</string>
+    <string name="amount">Belopp</string>
+    <string name="income_added">Lade till inkomst</string>
+    <string name="show_detailed_list">Visa detaljerad lista...</string>
+    <string name="title_activity_income_list">Listar inkomster</string>
+    <string name="title_activity_expense_list">Listar utgifter</string>
+    <string name="expense_added">Lade till utgift</string>
+    <string name="choose_a_date">Välj datum...</string>
+    <string name="total_income_text">Din totala inkomst är</string>
+    <string name="total_expense_text">Dina totala utgifter är</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="save_name">Spara namn</string>
+    <string name="lastname">Efternamn</string>
+    <string name="firstname">Förnamn</string>
+    <string name="preference_file_name">xeronic.org.majja.p1.preferences</string>
+    <string name="logged_in_as">Inloggad som:</string>
+    <string name="change_name">Klicka för att ändra namn</string>
+    <string name="current_balance">Ditt nuvarande saldo är: </string>
+    <string name="good_balance_message">Det rullar in mer cash än det rullar ut, bra jobbat!</string>
+    <string name="bad_balance_message">Du spenderar mer än du tjänar...</string>
+    <string name="neutral_balance_message">Din ekonomi går jämnt ut.</string>
+    <string name="close_button">Stäng</string>
+</resources>

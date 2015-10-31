@@ -4,40 +4,47 @@
     android:layout_height="match_parent"
     android:background="#dd6666">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40sp"
-        android:weightSum="1"
-        android:layout_gravity="center_vertical">
+        android:layout_height="60sp">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/list_item_income_title"
-            android:layout_marginLeft="20sp"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:textColor="#fff" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Lön"
             android:id="@+id/list_item_income_category"
             android:layout_gravity="center_vertical|right"
-            android:layout_marginRight="20sp"
-            android:textColor="#fff" />
+            android:textColor="#333"
+            android:layout_marginLeft="10sp"
+            android:layout_weight="0.35"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_centerVertical="true"
+            android:gravity="center" />
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="300sp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/list_item_income_title"
+            android:layout_gravity="center_vertical|left"
+            android:textColor="#fff"
+            android:layout_weight="0.65"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical|left"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="80sp" />
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1sp"
-        android:background="#ffffff"
+        android:background="#fff"
         android:layout_marginTop="2sp" />
 
 </LinearLayout>

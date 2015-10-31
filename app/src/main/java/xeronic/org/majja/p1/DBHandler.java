@@ -58,7 +58,7 @@ public class DBHandler extends SQLiteOpenHelper {
             transactions[i] = new Transaction(
                     cursor.getString(title_index),
                     cursor.getInt(amount_index),
-                    new java.util.Date(cursor.getLong(date_index)),
+                    cursor.getString(date_index),
                     cursor.getString(category_index));
         }
         return transactions;
@@ -83,7 +83,31 @@ public class DBHandler extends SQLiteOpenHelper {
             transactions[i] = new Transaction(
                     cursor.getString(title_index),
                     cursor.getInt(amount_index),
-                    new java.util.Date(cursor.getLong(date_index)),
+                    cursor.getString(date_index),
+                    cursor.getString(category_index));
+        }
+        return transactions;
+    }
+
+    public Transaction[] getAllTransactions() {
+        int id_index, title_index, amount_index, date_index, category_index;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + DBHandler.TABLE_NAME +
+                " ORDER BY " + DBHandler.COLUMN_DATE,null);
+        Transaction[] transactions = new Transaction[cursor.getCount()];
+
+        id_index = cursor.getColumnIndex(DBHandler.COLUMN_ID);
+        title_index = cursor.getColumnIndex(DBHandler.COLUMN_TITLE);
+        amount_index = cursor.getColumnIndex(DBHandler.COLUMN_AMOUNT);
+        date_index = cursor.getColumnIndex(DBHandler.COLUMN_DATE);
+        category_index = cursor.getColumnIndex(DBHandler.COLUMN_CATEGORY);
+
+        for(int i=0; i<transactions.length; i++) {
+            cursor.moveToPosition(i);
+            transactions[i] = new Transaction(
+                    cursor.getString(title_index),
+                    cursor.getInt(amount_index),
+                    cursor.getString(date_index),
                     cursor.getString(category_index));
         }
         return transactions;

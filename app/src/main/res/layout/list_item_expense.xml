@@ -7,7 +7,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40sp"
+        android:layout_height="wrap_content"
         android:weightSum="1"
         android:layout_gravity="center_vertical">
 
@@ -23,8 +23,8 @@
             android:textColor="#fff" />
 
         <ImageView
-            android:layout_width="40sp"
-            android:layout_height="40sp"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
             android:id="@+id/list_item_expense_image"
             android:layout_gravity="center_vertical" />
 

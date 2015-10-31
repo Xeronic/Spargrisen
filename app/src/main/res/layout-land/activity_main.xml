@@ -20,14 +20,14 @@
 
     <fragment
         android:layout_width="match_parent"
-        android:layout_height="300sp"
+        android:layout_height="wrap_content"
         android:name="xeronic.org.majja.p1.LogoFragment"
         android:id="@+id/fragment4"
         android:layout_above="@+id/show_result_activity_button"
         android:layout_centerHorizontal="true"
         tools:layout="@layout/fragment_logo"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="top"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -45,7 +45,7 @@
             android:textColor="#dd6666"
             android:background="#fff"
             android:layout_margin="5sp"
-            android:layout_weight="0" />
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="fill_parent"
@@ -57,7 +57,7 @@
             android:textColor="#dd6666"
             android:text="@string/add_income"
             android:layout_margin="5sp"
-            android:layout_weight="0" />
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="fill_parent"
@@ -69,7 +69,7 @@
             android:textColor="#dd6666"
             android:text="@string/add_expense"
             android:layout_margin="5sp"
-            android:layout_weight="0" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <fragment

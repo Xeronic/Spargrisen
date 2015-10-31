@@ -8,6 +8,13 @@
     android:background="#dd6666"
     android:orientation="vertical">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="xeronic.org.majja.p1.TopFragment"
+        android:id="@+id/fragment10"
+        tools:layout="@layout/fragment_top" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -21,12 +28,14 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/title"
             android:id="@+id/textView"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/income_title_input" />
+            android:id="@+id/income_title_input"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,14 +43,16 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/amount"
             android:id="@+id/textView2"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10sp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/income_input" />
+            android:id="@+id/income_input"
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,7 +60,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/date"
             android:id="@+id/textView3"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10sp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -63,7 +75,8 @@
                 android:ems="10"
                 android:id="@+id/income_date_input"
                 android:hint="ÅÅ-MM-DD"
-                android:layout_weight="3" />
+                android:layout_weight="3"
+                android:textSize="14sp" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -85,7 +98,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="@string/category"
             android:id="@+id/textView4"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10sp" />
 
         <Spinner
             android:layout_width="wrap_content"

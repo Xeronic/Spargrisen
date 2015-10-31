@@ -1,9 +1,13 @@
 package xeronic.org.majja.p1;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -16,10 +20,31 @@ public class IncomeListActivity extends Activity {
         setContentView(R.layout.activity_income_list);
 
         ListView incomes_list = (ListView) findViewById(R.id.incomes_list);
-        Transaction[] transactions = new DBHandler(this).getAllIncomes();
+        final Transaction[] transactions = new DBHandler(this).getAllIncomes();
 
         TransactionArrayAdapter transactions_adapter = new TransactionArrayAdapter(this, transactions);
         incomes_list.setAdapter(transactions_adapter);
+        incomes_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog alertDialog = new AlertDialog.Builder(IncomeListActivity.this).create();
+                alertDialog.setTitle(transactions[position].getTitle());
+
+                String message = "Belopp: " + transactions[position].getAmount() +
+                        "\nDatum: " + transactions[position].getDate() +
+                        "\nKategori: " + transactions[position].getCategory();
+
+                alertDialog.setMessage(message);
+
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                alertDialog.show();
+            }
+        });
 
     }
 

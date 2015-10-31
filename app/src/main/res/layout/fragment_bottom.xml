@@ -10,5 +10,6 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/balance_text"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:textColor="#fff" />
 </FrameLayout>

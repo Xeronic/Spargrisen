@@ -31,7 +31,7 @@ public class TransactionArrayAdapter extends ArrayAdapter<Transaction> {
             TextView list_item_income_title = (TextView) rowView.findViewById(R.id.list_item_income_title);
 
             list_item_income_category.setText(transactions[position].getCategory());
-            list_item_income_title.setText(transactions[position].getTitle());
+            list_item_income_title.setText(transactions[position].getTitle() + ": " + transactions[position].getAmount() + "kr");
 
             return rowView;
         }

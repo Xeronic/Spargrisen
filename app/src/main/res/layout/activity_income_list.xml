@@ -7,10 +7,27 @@
     tools:context="xeronic.org.majja.p1.IncomeListActivity"
     android:background="#dd6666">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="xeronic.org.majja.p1.TopFragment"
+        android:id="@+id/fragment13"
+        tools:layout="@layout/fragment_top" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/incomes_list"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/fragment7"
+        android:layout_below="@+id/fragment13" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="xeronic.org.majja.p1.BottomFragment"
+        android:id="@+id/fragment7"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:layout="@layout/fragment_bottom" />
 </RelativeLayout>

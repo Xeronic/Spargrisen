@@ -33,10 +33,27 @@ public class ExpenseActivity extends Activity implements DateInterface {
         choose_date_button = (Button) findViewById(R.id.expense_choose_date_button);
         category_spinner = (Spinner) findViewById(R.id.expense_spinner);
 
+        if (savedInstanceState != null) {
+            title_input.setText(savedInstanceState.getString("title"));
+            amount_input.setText(savedInstanceState.getString("amount"));
+            date_input.setText(savedInstanceState.getString("date"));
+            category_spinner.setSelection(savedInstanceState.getInt("category"));
+        }
+
         db_handler = new DBHandler(this);
 
         setListenersAndAdapters();
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("title", title_input.getText().toString());
+        outState.putString("amount", title_input.getText().toString());
+        outState.putString("date", title_input.getText().toString());
+        outState.putInt("category", category_spinner.getSelectedItemPosition());
+
+        super.onSaveInstanceState(outState);
     }
 
     private void setListenersAndAdapters() {
@@ -56,15 +73,11 @@ public class ExpenseActivity extends Activity implements DateInterface {
         add_expense_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String date_split[] = date_input.getText().toString().split("-");
-                int year = Integer.parseInt(date_split[0]);
-                int month = Integer.parseInt(date_split[1]);
-                int day = Integer.parseInt(date_split[2]);
 
                 Transaction transaction = new Transaction(
                         title_input.getText().toString(),
                         (Integer.parseInt(amount_input.getText().toString()) * -1),
-                        new Date(year, month, day),
+                        date_input.getText().toString(),
                         (String) category_spinner.getSelectedItem()
                 );
                 db_handler.addTransaction(transaction);
